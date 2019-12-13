@@ -1,7 +1,12 @@
 import React from 'react'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
+// import { Link } from 'react-router-dom'
 
 import './styles.css';
+//import { funcs } from './actions';
+
 
 class NewPage extends React.Component {
   constructor(props) {
@@ -27,4 +32,15 @@ NewPage.defaultProps = {
 
 };
 
-export default NewPage;
+function mapStateToProps(state) {
+  return {
+    // action func name: state.reducerName.actionfuncname
+
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  //return bindActionCreators({ //funcs from actions }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewPage);
